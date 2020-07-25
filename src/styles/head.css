@@ -1,0 +1,16 @@
+h1 {
+    font-family: 'Concert One', cursive;
+    font-size: 15vh;
+    padding: 10px;
+    padding-left: 20px;
+    text-align: center;
+}
+
+h1:hover {
+    color: #ff6600;
+    text-decoration: none;
+    cursor: pointer;   
+}
+.navItems {
+    font-size: 3vh;
+}
