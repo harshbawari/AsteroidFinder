@@ -12,34 +12,30 @@ class AsteroidFinder extends Component{
     this.state = {
       startDate: null,
       endDate: null,
-      neo: null,
-      loading: true,
-      url: 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=9btKaUMbolrOrzpJubGp9I1bQdcVtIlLyRzJGBU0'
+      dateReturned: false,
     }
-  }
-
-  async componentDidMount() {
-
-    
-    //this.setState({neo: await fetch(this.state.url).then((results) => {
-    //  return results.json();
-    //})});
-
-    const response = await fetch(this.state.url);
-    const data = await response.json();
-    this.setState({neo: data});
-    
-    this.setState({loading: false});
   }
 
   render() {
     return(
-      <div>
+      <div className="container-fluid">
         <Head />
-        {if(startDate === null and endDate === null)
+
+        <hr />
+
+        <div>
+          <p> 
+            Curious to know which asteroid are nearby you? 
+            Choose one the weeks or input a custom date to find Near-Earth-Asteroids in that date range!
+          </p>
+        </div>
+
+        {!this.state.dateReturned &&
           <ChooseTimeRange />
         }
+
         <hr />
+
       </div>
     );
   }

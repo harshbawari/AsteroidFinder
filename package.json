@@ -9,6 +9,7 @@
     "boostrap": "^2.0.0",
     "create-react-app": "^3.4.1",
     "react": "^16.13.1",
+    "react-date-picker": "^8.0.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
     "reactstrap": "^8.5.1"
