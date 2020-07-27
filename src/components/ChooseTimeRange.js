@@ -8,50 +8,56 @@ class ChooseTimeRange extends Component {
         super();
 
         this.state = {
-            startDate: null,
-            endDate: null,
-            date: new Date(),
+            startDate: new Date(),
+            endDate: new Date(),
         }
-
-
     }
 
-    prevWeek() {
-        
+    onChangeStart = startDate => this.setState({ startDate });
+
+    onChangeEnd = endDate => this.setState({ endDate });
+
+    submit = () => {
+
+        const differenceInDays = (a, b) => Math.floor(
+            (a.getTime() - b.getTime()) / (1000 * 60 * 60 * 24)
+        );
+
+
+        if( differenceInDays(this.state.endDate, this.state.startDate) < 0 ) 
+            alert("End Date cannot be smaller than Start Date!");
+        else if( differenceInDays(this.state.endDate, this.state.startDate ) > 7 ) 
+            alert("Maximum range is 7 days!");
+        else {
+            console.log("else");
+            return(
+                <div>
+                    here
+                    <Content startDate={this.startDate} endDate={this.endDate} />
+                </div>
+            );
+        }
     }
-
-    thisWeek() {
-
-    }
-
-    nextWeek() {
-
-    }
-
-    onChange = date => {
-        this.setState({date});
-        this.setState({startDate: date, endDate: date});
-    }
-
-    
-
 
     render() {
-        
         
         return(
             <div>
                 <div>
-                    <label>Choose a Week: </label>
-                    <button className="btn btn-primary col-12 col-md-3" onClick={this.prevWeek}>Previous Week</button>
-                    <button className="btn btn-danger col-12 col-md-3 offset-1" onClick={this.thisWeek}>This Week</button>
-                    <button className="btn btn-secondary col-12 col-md-3 offset-1" onClick={this.nextWeek}>Next Week</button>
+                    <DatePicker
+                        onChange={this.onChangeStart} 
+                        value={this.state.startDate}
+                    />
+                    <DatePicker
+                        onChange={this.onChangeEnd}
+                        value={this.state.endDate}
+                    />
                 </div>
                 <div>
-                    <DatePicker
-                        onChange={this.onChange} 
-                        value={this.state.date}
-                    />
+                    <input type="submit" className="btn btn-block btn-primary" value="Submit" onClick={this.submit} />
+                </div>
+                <div>
+
                 </div>
             </div>
         );
