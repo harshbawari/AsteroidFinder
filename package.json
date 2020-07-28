@@ -1,5 +1,5 @@
 {
-  "homepage": "http://harshbawari.github.io/asteroid-finder-deploy",
+  "homepage": "http://harshbawari.github.io/asteroidfinder",
   "name": "asteroidfinder",
   "version": "0.1.0",
   "private": true,
@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.1.2",
     "boostrap": "^2.0.0",
     "create-react-app": "^3.4.1",
+    "gh-pages": "^3.1.0",
     "react": "^16.13.1",
     "react-date-picker": "^8.0.1",
     "react-date-range": "^1.0.3",
