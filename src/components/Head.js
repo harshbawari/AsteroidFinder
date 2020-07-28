@@ -9,7 +9,7 @@ class Head extends Component {
             <div>
                 <div className="justify-content-center">
                     <h1>
-                        Asteroid Finder
+                        Neo Finder
                     </h1>
                 </div>
             </div>

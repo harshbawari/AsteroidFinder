@@ -10,12 +10,19 @@ class ChooseTimeRange extends Component {
         this.state = {
             startDate: new Date(),
             endDate: new Date(),
+            canPass: false,
         }
     }
 
-    onChangeStart = startDate => this.setState({ startDate });
+    onChangeStart = startDate => {
+        this.setState({ startDate });
+        this.setState({ canPass: false });
+    };
 
-    onChangeEnd = endDate => this.setState({ endDate });
+    onChangeEnd = endDate => {
+        this.setState({ endDate });
+        this.setState({ canPass: false });
+    };
 
     submit = () => {
 
@@ -24,23 +31,23 @@ class ChooseTimeRange extends Component {
         );
 
 
-        if( differenceInDays(this.state.endDate, this.state.startDate) < 0 ) 
+        if( differenceInDays(this.state.endDate, this.state.startDate) < 0 ) {
             alert("End Date cannot be smaller than Start Date!");
-        else if( differenceInDays(this.state.endDate, this.state.startDate ) > 7 ) 
-            alert("Maximum range is 7 days!");
-        else {
-            console.log("else");
-            return(
-                <div>
-                    here
-                    <Content startDate={this.startDate} endDate={this.endDate} />
-                </div>
-            );
+            this.setState({ canPass: false });
         }
-    }
+        else if( differenceInDays(this.state.endDate, this.state.startDate ) > 7 ) {
+            alert("Maximum range is 7 days!");
+            this.setState({ canPass: false });
+        }
+        else {
+            this.setState({ canPass: true });
+        }
+    }    
 
     render() {
         
+        const sendContent = this.state.canPass ? <Content startdate={this.state.startDate} enddate={this.state.endDate} /> : <div> </div>
+
         return(
             <div>
                 <div>
@@ -57,7 +64,7 @@ class ChooseTimeRange extends Component {
                     <input type="submit" className="btn btn-block btn-primary" value="Submit" onClick={this.submit} />
                 </div>
                 <div>
-
+                    {sendContent}
                 </div>
             </div>
         );
