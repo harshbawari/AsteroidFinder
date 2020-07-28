@@ -2,12 +2,12 @@
     color: black;
     text-align: center;
     font-family: American Typewriter, serif;
-    font-size: 30px;
+    font-size: 3vh;
 }
 
 dt {
     text-align: left;
-    font-size: 20px;
+    font-size: 2vh;
     font-family: Courier, monospace;
     vertical-align: middle;
     border-right: 2px solid black;
@@ -17,7 +17,7 @@ dt {
 
 dd {
     text-align: left;
-    font-size: 20px;
+    font-size: 2vh;
     font-family: Courier New, monospace;
     vertical-align: middle;
 }

@@ -57,10 +57,6 @@ class Content extends Component {
                 objects: this.state.objects.concat(Object.values(this.state.neo[i])),
             })
         }
-        
-        //this.state.objects.map((obj) => {
-        //    console.log(obj);
-        //});
 
         this.setState({loading: false});
     }
@@ -69,15 +65,22 @@ class Content extends Component {
 
         const renderObjects = this.state.objects.map((obj, i) => {
             return(
-                <div className="col-6 col-md-4">
+                <div className="col-12 col-sm-6 col-lg-4">
                     <RenderCard key={obj.id} object={obj} />
                 </div>
             );
         });
 
+        const ShowLoading = () => {
+            return(
+                <span className="badge badge-secondary">Loading...</span>
+            );
+        }
+        
+
         return(
             <div className="row mt-5">
-                {this.state.loading ? <div>Loading...</div> : renderObjects}
+                {this.state.loading ? <ShowLoading /> : renderObjects}
             </div>
         );
     }

@@ -49,18 +49,18 @@ class ChooseTimeRange extends Component {
         const sendContent = this.state.canPass ? <Content startdate={this.state.startDate} enddate={this.state.endDate} /> : <div> </div>
 
         return(
-            <div>
-                <div>
-                    <DatePicker
+            <div className="row justify-content-center align-items-center">
+                <div className="col-12 col-md-6">
+                    <DatePicker className="col-4 col-md-3 mb-4"
                         onChange={this.onChangeStart} 
                         value={this.state.startDate}
                     />
-                    <DatePicker
+                    <DatePicker className="ml-md-5 ml-5 col-4 col-md-3"
                         onChange={this.onChangeEnd}
                         value={this.state.endDate}
                     />
                 </div>
-                <div>
+                <div className="col-6 offset-md-2 col-md-2">
                     <input type="submit" className="btn btn-block btn-primary" value="Submit" onClick={this.submit} />
                 </div>
                 <div>

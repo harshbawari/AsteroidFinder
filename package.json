@@ -1,4 +1,5 @@
 {
+  "homepage": "http://harshbawari.github.io/asteroid-finder-deploy",
   "name": "asteroidfinder",
   "version": "0.1.0",
   "private": true,
@@ -19,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,6 +41,7 @@
   "devDependencies": {
     "boostrap": "^2.0.0",
     "bootstrap": "^4.5.0",
+    "gh-pages": "^3.1.0",
     "react-calendar": "^3.1.0",
     "react-date-range": "^1.0.3",
     "react-popper": "^2.2.3",

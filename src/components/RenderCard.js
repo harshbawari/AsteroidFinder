@@ -19,7 +19,7 @@ class RenderCard extends Component {
                         {this.props.object.name}
                     </div>
                     <div className="card-body">
-                        <dl className="row">
+                        <dl className="row justify-content-center">
                             <dt className="col-6">Diameter</dt>
                             <dd className="col-6">{this.props.object.estimated_diameter.meters.estimated_diameter_max} meters</dd>
 
@@ -33,7 +33,7 @@ class RenderCard extends Component {
                             <dd className="col-6">{this.props.object.close_approach_data[0].miss_distance.kilometers} km</dd>
 
                             <dt className="col-6">Potentially Hazardous</dt>
-                            <dd className="col-6">{this.props.object.is_potentially_hazardous_asteroid? <span className="badge badge-danger">Yes, run for your life!</span> : <span className="badge badge-success">No. Chill, you are safe!</span>}</dd>
+                            <dd className="col-6">{this.props.object.is_potentially_hazardous_asteroid? <div className="badge badge-danger text-wrap">Yes, run for your life!</div> : <span className="badge badge-success text-wrap">No. Chill, you are safe!</span>}</dd>
                         </dl>
                     </div>
                 </div>

@@ -25,8 +25,8 @@ class AsteroidFinder extends Component{
 
         <div>
           <p> 
-            Curious to know which asteroid are nearby you? 
-            Choose one the weeks or input a custom date to find Near-Earth-Asteroids in that date range!
+            Curious to know which Asteroids are nearby you? 
+            Select a range of date(max 7 days) to find Asteroids that will be close to earth during that time!
           </p>
         </div>
 
