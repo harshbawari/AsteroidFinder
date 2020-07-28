@@ -1,0 +1,23 @@
+.card-header {
+    color: black;
+    text-align: center;
+    font-family: American Typewriter, serif;
+    font-size: 30px;
+}
+
+dt {
+    text-align: left;
+    font-size: 20px;
+    font-family: Courier, monospace;
+    vertical-align: middle;
+    border-right: 2px solid black;
+    border-radius: 1px;
+    margin-bottom: 15px;
+}
+
+dd {
+    text-align: left;
+    font-size: 20px;
+    font-family: Courier New, monospace;
+    vertical-align: middle;
+}

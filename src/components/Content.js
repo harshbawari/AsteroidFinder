@@ -58,9 +58,9 @@ class Content extends Component {
             })
         }
         
-        this.state.objects.map((obj) => {
-            console.log(obj);
-        });
+        //this.state.objects.map((obj) => {
+        //    console.log(obj);
+        //});
 
         this.setState({loading: false});
     }
@@ -69,13 +69,15 @@ class Content extends Component {
 
         const renderObjects = this.state.objects.map((obj, i) => {
             return(
-                    <RenderCard key={i} object={obj} />
+                <div className="col-6 col-md-4">
+                    <RenderCard key={obj.id} object={obj} />
+                </div>
             );
         });
 
         return(
-            <div>
-                {this.state.loading ? <div>Loading...</div> : <div>{this.state.objects.length}{renderObjects}</div>}
+            <div className="row mt-5">
+                {this.state.loading ? <div>Loading...</div> : renderObjects}
             </div>
         );
     }
