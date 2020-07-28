@@ -11,6 +11,9 @@ class Head extends Component {
                         Asteroid Finder
                     </h1>
                 </div>
+                <div className="d-flex flex-row-reverse">
+                    <span>by Harsh Bawari</span>
+                </div>
             </div>
         );
     }

@@ -14,3 +14,8 @@ h1:hover {
 .navItems {
     font-size: 3vh;
 }
+
+span {
+    text-align: right;
+    font-family: Roboto, monospace;
+}
